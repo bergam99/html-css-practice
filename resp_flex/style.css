@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: green;
+}
+
+
+section, div, article{
+    border: 2px solid white;
+}
+
+section{
+    width: min(1196px, 100%);
+    /* 1196px 까지 100퍼 유지하고 따라감.*/
+    margin: 0 auto;
+    /* 가운데 정렬 */
+}
+
+img{
+    /* 이 부분은 거의 정석. 모든 사진에 씀. */
+    max-width: 100%;
+    /* 줄여도 이미지 안잘리게 */
+    display: block;
+}
+
+h1{
+    font-size: clamp(30px, 5vw, 50px);
+    /* 30px 이하부터  줄어들지 않음. 50px 이상부터 늘어나지 않음. 5vw: prefered */
+    /* au milieu le moment ou le changement doit intervenir  */
+    text-align: center;
+    color: white;
+}
+
+.flex{
+    /* 정석 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+/* flex. : 여러번 할 것 모두에 적용 */
+
+.boite-blanche{
+    background: white;
+    padding: 30px;
+    gap: 20px 
+    /* gap: 글자 이미지 사이 간격 (article, img 사이.)  */
+    /* gap 은 부모에 설정 */
+}
+/* CARDS */
+.cards{
+    width: min(1086px, 100%);
+    border: 5px solid black;
+    margin: 0 auto;
+    gap: 30px;
+}
+.card{
+    background-color:white;
+    padding: 35px;
+}
+
+@media (max-width: 960px){
+    .boite-blanche{
+        flex-direction: column;
+    }
+}
+/* 960px 부터 세로 정렬 */
+
+/* S2 */
+@media (max-width: 760px){
+    .cards{
+        flex-direction: column;
+    }
+}
+/* 760px 부터 세로 정렬 */

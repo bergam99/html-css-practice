@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Limbu&display=swap');
+
+/* font-family: 'Noto Sans Limbu', sans-serif; */
+
+/* Standard */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Limbu', sans-serif;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+:root{
+    --color-red : #CF3034;
+    --color-white : #fff;
+    /* 한번에 색 바꾸기 */
+}
+
+body{
+    background: #E5E5E5;
+    
+}
+
+div, section, main, header, nav{
+    border: 2px solid black;
+}
+/* flex */
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column{
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+/* main */
+main{
+    width: min(1196px, 100%);
+    /* 스페이스 없음. */
+    /* 1196 넘게 줄이면 100%로 화면 따라갈게. 90%*/
+    margin: 20px auto 100px;
+    /* 20px: haut, auto: 가운데 정렬, 100px : footer 높이 */
+    /* 위, 옆, 아래. */
+}
+
+/* header */
+
+nav{
+    gap:55px;
+    /* gap 쓰려면 flex가 꼭 부모로 있어야 함 */
+}
+
+.lien{
+    gap: 7px;
+}
+
+nav a:hover{
+    color: var(--color-red)
+}
+
+/* Trait */
+hr{
+    border:1px solid var(--color-white);
+    margin: 30px 0;
+}
+
+/* accueil */
+#accueil{
+    gap: 40px;
+    background: var(--color-white);
+    /* ?????? */
+    padding: 45px 0 45px 45px;
+}
+
+.accueil-contenu{
+    min-height: 424px;
+    /* 이미지가 424이므로 로고를 이미지와 같은 높이로 . */
+    /*  */
+    align-items: flex-start;    
+}
+
+.accueil-contenu h1{
+    font-size: clamp(24px,3vw, 38px);
+    /* a partir de 2vw je reduis ou  */
+    /* plus la valeur est petit plus cela change vite */
+    /* la vitesse pn choisit */
+    /* a partir quelle moment cela reduit */
+}
+
+.accueil-boutons{
+    gap: 20px;
+}
+
+.accueil-boutons button{
+    padding: 15px 30px;
+}
+
+/* ---Media--- */
+@media (max-width: 1030px){
+    #accueil{
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+/* 1030px 이하로 줄이면 세로정렬, 20px 패딩 */
+
+@media (max-width: 450px){
+    #accueil > img{
+        display: none;
+        /* img 바로 밑에 오는 자식 */
+    }
+}
+/* 450px 이하부터 이미지 사라져 */
+
